@@ -35,6 +35,14 @@ Route::namespace('Auth')->middleware('guest:admin')->group(function()
 Route::middleware('admin')->group(function () {
     Route::get('dashboard','HomeController@index')->name('dashboard');
 
+    //Packets
+    Route::get('packets',[\App\Http\Controllers\Admin\PacketsController::class, 'index'])->name('admin_packets'); 
+    Route::post('packets/add',[\App\Http\Controllers\Admin\PacketsController::class, 'store'])->name('admin_packets_add');
+        Route::get('packets/add', function () {
+            return view('admin.packets.packets_add');
+        });
+
+
 });
 Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 
