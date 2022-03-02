@@ -33,7 +33,7 @@
                                     <tr>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->property}}</td>
-                                        <td>N{{$rs->packetDuration}}</td>
+                                        <td>{{$rs->packetDuration}}</td>
                                         <td>{{$rs->licenseKey}}</td>
                                         <td>{{$rs->price}}</td>     
                                     </tr>
