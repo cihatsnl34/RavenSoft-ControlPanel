@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Hexzy - Responsive Admin Dashboard Template</title>
+        <title>DGMOS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta content="Admin Dashboard" name="description" />
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="{{asset('assets')}}/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('assets')}}/images/dgmoss.png">
 
         <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{asset('assets')}}/css/icons.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
 
                 <div class="card-body">
                     <div class="text-center m-t-0 m-b-15">
-                            <a href="index.html" class="logo logo-admin"><img src="{{asset('assets')}}/images/logo-dark.png" alt="" height="34"></a>
+                            <a href="#" class="logo logo-admin"><img src="{{asset('assets')}}/images/dgmoss.png" alt="" height="34"></a>
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>Sign Up</b></h4>
 

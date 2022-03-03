@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Hexzy - Responsive Admin Dashboard Template</title>
+    <title>DGMOS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="{{asset('assets')}}/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('assets')}}/images/dgmoss.png">
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="{{asset('assets')}}/plugins/morris/morris.css">
@@ -28,15 +28,15 @@
 
 <body class="fixed-left">
     <div id="wrapper">
-        @include('admin._header')
-        @include('admin._sidebar')
+        @include('buyer._header')
+        @include('buyer._sidebar')
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
                  @yield('content')
             </div>
         </div>
-        @include('admin._footer')
+        @include('buyer._footer')
 
     </div>
     

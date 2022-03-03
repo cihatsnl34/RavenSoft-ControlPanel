@@ -26,7 +26,7 @@
 
                 <div class="card-body">
                     <div class="text-center m-t-0 m-b-15">
-                            <a href="index.html" class="logo logo-admin"><img src="{{asset('assets')}}/images/logo-dark.png" alt="" height="34"></a>
+                            <a href="index.html" class="logo logo-admin"><img src="{{asset('assets')}}/images/dgmoss.png" alt="" height="34"></a>
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>Sign In</b></h4>
 

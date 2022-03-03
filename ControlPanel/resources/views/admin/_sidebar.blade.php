@@ -2,18 +2,13 @@
     <div class="sidebar-inner slimscrollleft">
 
         <div class="user-details">
-            <div class="text-center">
-                <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-circle img-thumbnail">
-            </div>
+           
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kenny Rigdon</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{session('name')}}</a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)" class="dropdown-item"> Profile</a></li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"><span class="badge badge-success float-right">5</span> Settings </a></li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"> Lock screen</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"> Logout</a></li>
+                        <!--<li><a href="javascript:void(0)" class="dropdown-item"> Profile</a></li>-->
+                       
                     </ul>
                 </div>
 
@@ -30,8 +25,12 @@
                     <a href="{{route('admin.adminlogin')}}" class="waves-effect"><i class="ti-home"></i><span> Home</span></a>
                 </li>
 
-                <li>
-                    <a href="{{route('admin.admin_packets')}}" class="waves-effect"><i class="ti-files"></i><span> Packages </span></a>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Packages </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.admin_packets')}}"> Packages</a></li>
+                        <li><a href="{{route('admin.admin_packets_add')}}">Packages Add</a></li>
+                    </ul>
                 </li>
                 <li >
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span></a>

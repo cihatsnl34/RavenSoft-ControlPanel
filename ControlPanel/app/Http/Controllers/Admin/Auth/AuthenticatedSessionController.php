@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\AdminLoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,8 +30,12 @@ class AuthenticatedSessionController extends Controller
     public function store(AdminLoginRequest $request)
     {
        
+        
         $request->authenticate();
-
+        $email = $request->input('email');
+        $user = DB::select('select * from admins where email = ?', [$email])[0];
+        session(['name' =>$user->name]);
+        session(['id' => $user->id]);
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::ADMIN_HOME);

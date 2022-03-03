@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -66,8 +67,10 @@ Route::namespace('Buyer')->prefix('buyer')->name('buyer.')->group(function (){
     Route::get('packetsBuy/{id}',[\App\Http\Controllers\Buyer\HomeController::class, 'store'])->name('buyer_package_buy');
     });
 
-    Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+    Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
+
+#Register
 Route::post('register',[\App\Http\Controllers\BuyerRegisterController::class, 'store'])->name('buyer_register');
         Route::get('register', function () {
             return view('register');
