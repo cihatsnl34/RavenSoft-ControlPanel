@@ -48,6 +48,14 @@ return [
             'driver' => 'session',
             'provider' => 'buyers',
         ],
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'companies',
+        ],
+        'partner' => [
+            'driver' => 'session',
+            'provider' => 'partners',
+        ],
     ],
 
     /*
@@ -79,6 +87,14 @@ return [
         'buyers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Buyer::class,
+        ],
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Company::class,
+        ],
+        'partners' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Partner::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

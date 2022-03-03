@@ -33,13 +33,14 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span></a>
+                    <a href="{{route('admin.admin_company_show')}}" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span></a>
                     
                 </li>
                 <li >
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account"></i><span> Customer </span></a>
                     
                 </li>
+                
 
                 
                

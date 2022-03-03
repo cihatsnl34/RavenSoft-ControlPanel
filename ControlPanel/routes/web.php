@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//Welcome
+Route::post('/',[\App\Http\Controllers\WelcomeController::class, 'welcome'])->name('welcome');
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/card', function () {
+    return view('card');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -46,11 +53,13 @@ Route::middleware('admin')->group(function () {
     Route::post('packets/update/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'update'])->name('admin_packets_update');
     Route::get('packets/delete/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'destroy'])->name('admin_packets_delete');
 
+    #Company
+    Route::get('company',[\App\Http\Controllers\Admin\AppealController::class, 'index'])->name('admin_company_show'); 
+    Route::get('company/approve/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'approve'])->name('admin_company_approve');
+    Route::get('company/delete/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'destroy'])->name('admin_company_delete');
 
 });
 Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
-
-
 
 });
 
@@ -75,3 +84,58 @@ Route::post('register',[\App\Http\Controllers\BuyerRegisterController::class, 's
         Route::get('register', function () {
             return view('register');
         });
+        
+#Company
+Route::namespace('Company')->prefix('company')->name('company.')->group(function (){
+    Route::namespace('Auth')->middleware('guest:company')->group(function(){
+        //login route
+        Route::get('login','AuthenticatedSessionController@create')->name('login');
+        Route::post('login','AuthenticatedSessionController@store')->name('companylogin');
+    });
+    Route::middleware('company')->group(function () {
+
+    Route::get('dashboard','AppialController@index')->name('dashboard');
+    //Packets
+    Route::get('packets',[\App\Http\Controllers\Company\PackageController::class, 'index'])->name('company_packets'); 
+    Route::post('packets/add',[\App\Http\Controllers\Company\PackageController::class, 'store'])->name('company_packets_add');
+        Route::get('packets/add', function () {
+            return view('company.packets.packets_add');
+        });
+    Route::get('packets/edit/{id}',[\App\Http\Controllers\Company\PackageController::class, 'edit'])->name('company_packets_edit');
+    Route::post('packets/update/{id}',[\App\Http\Controllers\Company\PackageController::class, 'update'])->name('company_packets_update');
+    Route::get('packets/delete/{id}',[\App\Http\Controllers\Company\PackageController::class, 'destroy'])->name('company_packets_delete');
+
+    #partner
+    Route::get('partner',[\App\Http\Controllers\Company\AppialController::class, 'index'])->name('company_partner_show'); 
+    Route::get('partner/approve/{id}',[\App\Http\Controllers\Company\AppialController::class, 'approve'])->name('company_partner_approve');
+    Route::get('partner/delete/{id}',[\App\Http\Controllers\Company\AppialController::class, 'destroy'])->name('company_partner_delete');
+    });
+    Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+
+
+    });
+    #Company Register
+    Route::post('companyRegister',[\App\Http\Controllers\CompanyRegisterController::class, 'store'])->name('company_register');
+    Route::get('companyRegister', function () {
+        return view('companyRegister');
+    });
+#Partner
+Route::namespace('Partner')->prefix('partner')->name('partner.')->group(function (){
+    Route::namespace('Auth')->middleware('guest:partner')->group(function(){
+        //login route
+        Route::get('login','AuthenticatedSessionController@create')->name('login');
+        Route::post('login','AuthenticatedSessionController@store')->name('partnerlogin');
+    });
+    Route::middleware('partner')->group(function () {
+        Route::get('dashboard','HomeController@index')->name('dashboard');
+        Route::get('packetsBuy/{id}',[\App\Http\Controllers\Partner\HomeController::class, 'store'])->name('partner_package_buy');
+        Route::get('Card',[\App\Http\Controllers\Partner\HomeController::class, 'card'])->name('partner_card');
+        });  
+          Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+
+    });
+#Partner Register
+Route::post('partnerRegister',[\App\Http\Controllers\PartnerRegisterController::class, 'store'])->name('partner_register');
+Route::get('partnerRegister', function () {
+    return view('partnerRegister');
+});

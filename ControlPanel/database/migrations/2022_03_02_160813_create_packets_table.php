@@ -15,11 +15,17 @@ class CreatePacketsTable extends Migration
     {
         Schema::create('packets', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->integer('packetDuration');
-            $table->longText('property');
-            $table->string('licenseKey')->unique();
-            $table->integer('price');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('phone');
+            $table->string('country');
+            $table->longText('adress');
+            $table->string('province');
+            $table->string('district');
+            $table->string('postCode');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
