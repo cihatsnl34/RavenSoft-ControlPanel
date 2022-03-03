@@ -41,10 +41,34 @@ Route::middleware('admin')->group(function () {
         Route::get('packets/add', function () {
             return view('admin.packets.packets_add');
         });
+    Route::get('packets/edit/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'edit'])->name('admin_packets_edit');
+    Route::post('packets/update/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'update'])->name('admin_packets_update');
+    Route::get('packets/delete/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'destroy'])->name('admin_packets_delete');
 
 
 });
-Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+
 
 
 });
+
+#Buyer
+Route::namespace('Buyer')->prefix('buyer')->name('buyer.')->group(function (){
+    Route::namespace('Auth')->middleware('guest:buyer')->group(function()
+    {
+        Route::get('login','AuthenticatedSessionController@create')->name('login');
+        Route::post('login','AuthenticatedSessionController@store')->name('buyerlogin');
+    });
+    Route::middleware('buyer')->group(function () {
+
+    Route::get('dashboard','HomeController@index')->name('dashboard');
+    Route::get('packetsBuy/{id}',[\App\Http\Controllers\Buyer\HomeController::class, 'store'])->name('buyer_package_buy');
+    });
+
+    Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+});
+Route::post('register',[\App\Http\Controllers\BuyerRegisterController::class, 'store'])->name('buyer_register');
+        Route::get('register', function () {
+            return view('register');
+        });

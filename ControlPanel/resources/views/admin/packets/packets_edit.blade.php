@@ -15,18 +15,18 @@
                     <div class="card-body">
                         <h4 class="m-t-0 m-b-30">Packages Add</h4>
 
-                        <form class="form-horizontal" action="{{ route('admin.admin_packets_add') }}" method="POST">
+                        <form class="form-horizontal" action="{{ route('admin.admin_packets_update',['id'=>$PacketsData->id]) }}" method="POST">
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label" for="example-text-input">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="" id="" name="title"required>
+                                    <input value={{$PacketsData->title}} type="text" class="form-control" id="" name="title"required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label" for="example-textarea-input">Property</label>
                                 <div class="col-sm-10">
-                                    <textarea name="property" class="form-control" rows="5" id=""required></textarea>
+                                    <textarea name="property" class="form-control" rows="5" id=""required><?=$PacketsData->property?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row ">
@@ -43,16 +43,15 @@
                                     </select>
                                 </div>
                             </div>
-                           
-                         
+                            
                             <div class="form-group row">
                                 <label class="col-sm-2 control-label" for="example-text-input">Price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" value="" id="" name="price" required>
+                                    <input value={{$PacketsData->price}} type="number" class="form-control" id="" name="price" required>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <button type="submit" class="btn btn-primary waves-effect waves-light m-l-10">Add</button>
+                                <button type="submit" class="btn btn-primary waves-effect waves-light m-l-10">Edit</button>
                             </div>
 
                         </form>

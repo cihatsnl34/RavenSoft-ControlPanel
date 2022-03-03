@@ -27,11 +27,11 @@
                 <li class="menu-title">Main</li>
 
                 <li>
-                    <a href="{{route('admin.adminlogin')}}" class="waves-effect"><i class="ti-home"></i><span> Home</span></a>
+                    <a href="{{route('buyer.buyerlogin')}}" class="waves-effect"><i class="ti-home"></i><span> Home</span></a>
                 </li>
 
                 <li>
-                    <a href="{{route('admin.admin_packets')}}" class="waves-effect"><i class="ti-files"></i><span> Packages </span></a>
+                    <a href="{{route('buyer.buyer_packets')}}" class="waves-effect"><i class="ti-files"></i><span> Packages </span></a>
                 </li>
                 <li >
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span></a>

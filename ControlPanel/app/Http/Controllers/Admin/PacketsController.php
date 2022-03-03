@@ -43,7 +43,7 @@ class PacketsController extends Controller
             'title' => $request->input('title'),
             'property' => $request->input('property'),
             'packetDuration' => $request->input('packetDuration'),
-            'licenseKey' => $request->input('licenseKey'),
+            'licenseKey' => "DGMOS".uniqid(),
             'price' => $request->input('price'),
             'created_at'=>$currentTime
         ]);
@@ -67,9 +67,11 @@ class PacketsController extends Controller
      * @param  \App\Models\Packets  $packets
      * @return \Illuminate\Http\Response
      */
-    public function edit(Packets $packets)
+    public function edit(Packets $packets,$id)
     {
-        //
+        $PacketsData = Packets::find($id);
+        $PacketsList = DB::table('packets')->get();
+        return view('admin.packets.packets_edit', ['PacketsData' => $PacketsData, 'PacketsList' => $PacketsList]);
     }
 
     /**
@@ -79,9 +81,18 @@ class PacketsController extends Controller
      * @param  \App\Models\Packets  $packets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Packets $packets)
+    public function update(Request $request, Packets $packets,$id)
     {
-        //
+        $update = Carbon::now();
+        $PacketsData = Packets::find($id);
+        $PacketsData->title = $request->input('title');
+        $PacketsData->property = $request->input('property');
+        $PacketsData->packetDuration = $request->input('packetDuration');
+
+        $PacketsData->price = $request->input('price');
+        $PacketsData->updated_at = $update;
+        $PacketsData->save();
+        return redirect()->route('admin.admin_packets');
     }
 
     /**
@@ -90,8 +101,9 @@ class PacketsController extends Controller
      * @param  \App\Models\Packets  $packets
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Packets $packets)
+    public function destroy(Packets $packets,$id)
     {
-        //
+        DB::table('packets')->where('id', '=', $id)->delete();
+        return redirect()->route('admin.admin_packets');
     }
 }
