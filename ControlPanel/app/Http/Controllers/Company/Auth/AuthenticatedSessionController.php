@@ -33,12 +33,17 @@ class AuthenticatedSessionController extends Controller
        
         $request->authenticate();
         $email = $request->input('email');
+        $password = $request->input('password');
         $user = DB::select('select * from companies where email = ?', [$email])[0];
         session(['username' =>$user->name]);
         session(['id' => $user->id]);
+        session(['country' => $user->country]);
+        session(['status' => $user->status]);
         $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::COMPANY_HOME);
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => session('status')])) {
+            return redirect()->intended(RouteServiceProvider::COMPANY_HOME);
+        }
+        
     }
 
     /**

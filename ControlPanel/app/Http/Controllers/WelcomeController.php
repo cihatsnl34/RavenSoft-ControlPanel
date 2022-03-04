@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-
+use App\Models\Company;
 class WelcomeController extends Controller
 {
    
@@ -17,7 +17,11 @@ class WelcomeController extends Controller
 
     
     public function create(){
-        $companyList = DB::table('companies')->where('status', '=', 1)->get();
+        $companyList = Company::select('*')
+                ->where('status', '=', 1)
+                ->where('country', '=', session('country'))
+                ->get();
+       // DB::table('companies')->where('status', '=', 1)->get();
         return view('company_select',['companyList'=>$companyList]);
     }
     public function store(Request $request){

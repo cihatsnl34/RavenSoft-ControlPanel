@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
    {
-    $packetList = DB::select('select * from packets');
+    $packetList = DB::table('packets')->where('country', '=', session('country'))->get();
     return view('partner.index',['packetList'=>$packetList]);
    }
    public function store(Packets $packets,Partner $partner,$id)

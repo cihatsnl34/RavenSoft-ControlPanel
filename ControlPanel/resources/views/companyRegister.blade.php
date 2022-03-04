@@ -37,7 +37,7 @@
                                 <input class="form-control" name="name" type="text" required="" placeholder="Name">
                             </div>
                         </div>
-                        <div class="form-group">
+                       <div class="form-group">
                             <div class="col-12">
                                 <input class="form-control" name="email"  type="email" required="" placeholder="Email">
                             </div>
@@ -54,14 +54,16 @@
                         </div>
                         <div class="form-group">
                             <div class="col-12">
-                                <input class="form-control" name="country" type="text" required="" placeholder="Country">
+                                <select name="country" class="form-control" placeholder="Country">
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="USA">USA</option>
+                                    <option value="England">England</option>
+                                    <option value="Turkey">Turkey</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-12">
-                                <textarea name="adress" class="form-control" placeholder="Adress" rows="5" id=""required></textarea>
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <div class="col-12">
                                 <input class="form-control" name="province" type="text" required="" placeholder="Province">
@@ -70,6 +72,11 @@
                         <div class="form-group">
                             <div class="col-12">
                                 <input class="form-control" name="district" type="text" required="" placeholder="District">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <textarea name="adress" class="form-control" placeholder="Adress" rows="5" id=""required></textarea>
                             </div>
                         </div>
                         <div class="form-group">

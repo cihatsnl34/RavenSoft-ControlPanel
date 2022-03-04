@@ -17,7 +17,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $packetList = DB::select('select * from packets');
+        $packetList = DB::table('packets')->where('companyId', '=', session('id'))->get();
+       // $packetList = DB::select('select * from packets ');
         return view('company.packets.packets',['packetList'=>$packetList]);
     }
 
@@ -46,6 +47,8 @@ class PackageController extends Controller
             'packetDuration' => $request->input('packetDuration'),
             'licenseKey' => "DGMOS".uniqid(),
             'price' => $request->input('price'),
+            'companyId' => session('id'),
+            'country' => session('country'),
             'created_at'=>$currentTime
         ]);
         return redirect()->route('company.company_packets');

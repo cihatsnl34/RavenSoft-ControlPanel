@@ -23,7 +23,7 @@
     <link href="{{asset('assets')}}/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets')}}/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets')}}/plugins/datatables/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
+    
 </head>
 
 <body class="fixed-left">
