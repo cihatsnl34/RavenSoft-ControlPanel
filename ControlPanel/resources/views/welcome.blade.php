@@ -13,30 +13,7 @@
         <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{asset('assets')}}/css/icons.css" rel="stylesheet" type="text/css">
         <link href="{{asset('assets')}}/css/style.css" rel="stylesheet" type="text/css">
-        <script>
-            function getCountry(val) {
-              
-                var myParent = document.body;
-
-                //Create array of options to be added
-                var array = ["Volvo","Saab","Mercades","Audi"];
-
-                //Create and append select list
-                var selectList = document.createElement("select");
-                selectList.id = "mySelect";
-                myParent.appendChild(selectList);
-
-                //Create and append the options
-                for (var i = 0; i < array.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = array[i];
-                    option.text = array[i];
-                    selectList.appendChild(option);
-                }
-
-            }
-            
-            </script>
+       
     </head>
 
     
@@ -88,11 +65,11 @@
                                                 <div class="form-group row mb-0">
                                                     <label class="col-sm-2 control-label">Select Country</label>
                                                     <div class="col-sm-10">
-                                                        <select name="country" id="deneme" class="form-control" onchange="getCountry(this.value),deneme()">
-                                                            <option value="germany">Germany</option>
-                                                            <option value="usa">USA</option>
-                                                            <option value="england">England</option>
-                                                            <option value="turkey">Turkey</option>
+                                                        <select name="country" id="deneme" class="form-control">
+                                                            <option value="Germany">Germany</option>
+                                                            <option value="USA">USA</option>
+                                                            <option value="England">England</option>
+                                                            <option value="Turkey">Turkey</option>
                                                         </select>
                                                         <button type="submit" class="btn btn-primary waves-effect waves-light m-l-10">Select</button>
                                                     </div>

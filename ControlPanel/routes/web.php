@@ -20,10 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('company_select',[\App\Http\Controllers\WelcomeController::class, 'store'])->name('company_select_add');
+Route::get('company_select',[\App\Http\Controllers\WelcomeController::class, 'create'])->name('company_select');
 
-Route::get('/card', function () {
-    return view('card');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -109,6 +110,7 @@ Route::namespace('Company')->prefix('company')->name('company.')->group(function
     Route::get('partner',[\App\Http\Controllers\Company\AppialController::class, 'index'])->name('company_partner_show'); 
     Route::get('partner/approve/{id}',[\App\Http\Controllers\Company\AppialController::class, 'approve'])->name('company_partner_approve');
     Route::get('partner/delete/{id}',[\App\Http\Controllers\Company\AppialController::class, 'destroy'])->name('company_partner_delete');
+    
     });
     Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 

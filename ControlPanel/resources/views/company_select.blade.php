@@ -65,13 +65,14 @@
                                                 <div class="form-group row mb-0">
                                                     <label class="col-sm-2 control-label">Select Company</label>
                                                     <div class="col-sm-10">
-                                                        <select name="deneme" class="form-control">
+                                                        <select name="select" class="form-control">
+                                                            @foreach($companyList as $rs)
                                                             
-                                                            <option id="germany">Germany-Company Name</option>
-                                                            <option id="germany">Germany-Company Name</option>
-                                                            <option id="germany">Germany-Company Name</option>
-                                                            <option id="germany">Germany-Company Name</option>
-                                                            <option id="usa">Germany-Company Name-I Want To Register</option>
+                                                            <option value=0>{{$rs->name}}</option>
+                                                            @endforeach
+                                                            <option value=1>Company I Want To Register</option>
+                                                            <option value=2>Login is Partner</option>
+                                                            <option value=3>Register is Partner</option>
                                                         </select>
                                                         <button type="submit" class="btn btn-primary waves-effect waves-light m-l-10">Select</button>
                                                     </div>
