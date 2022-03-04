@@ -55,7 +55,7 @@ class AppialController extends Controller
     {
         //
     }
-
+ 
     /**
      * Display the specified resource.
      *

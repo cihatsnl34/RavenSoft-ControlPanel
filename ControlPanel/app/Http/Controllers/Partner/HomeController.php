@@ -29,6 +29,8 @@ class HomeController extends Controller
             'packetDuration' => $PackageData->packetDuration,
             'licenseKey' =>  $PackageData->licenseKey,
             'price' =>  $PackageData->price,
+            'partnerId' =>  $PartnerId,
+            'companyId' =>  $PackageData->companyId,
             'created_at'=>$currentTime
         ]);
         return redirect()->route('partner.dashboard');

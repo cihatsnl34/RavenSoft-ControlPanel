@@ -34,7 +34,7 @@
             </div>
         
         </center>
-       <hr> <a href="{{route('partner.partner_card')}}" class="btn btn-primary waves-effect waves-light">BUY</a>
+       <hr> <a href="{{route('partner.partner_package_buy',['id' =>$rs->id])}}" class="btn btn-primary waves-effect waves-light">BUY</a>
     </div>
         
     </div>

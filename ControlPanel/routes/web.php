@@ -110,7 +110,12 @@ Route::namespace('Company')->prefix('company')->name('company.')->group(function
     Route::get('partner',[\App\Http\Controllers\Company\AppialController::class, 'index'])->name('company_partner_show'); 
     Route::get('partner/approve/{id}',[\App\Http\Controllers\Company\AppialController::class, 'approve'])->name('company_partner_approve');
     Route::get('partner/delete/{id}',[\App\Http\Controllers\Company\AppialController::class, 'destroy'])->name('company_partner_delete');
-    
+    #Active Service
+    Route::get('activeService',[\App\Http\Controllers\Company\ActiveServiceController::class, 'index'])->name('activeService_show'); 
+    Route::get('activeService/edit/{id}',[\App\Http\Controllers\Company\ActiveServiceController::class, 'edit'])->name('activeService_edit');
+    Route::post('activeService/update/{id}',[\App\Http\Controllers\Company\ActiveServiceController::class, 'update'])->name('activeService_update');
+    //Route::get('activeService/approve/{id}',[\App\Http\Controllers\Company\ActiveServiceController::class, 'approve'])->name('company_partner_approve');
+    Route::get('activeService/delete/{id}',[\App\Http\Controllers\Company\ActiveServiceController::class, 'destroy'])->name('activeService_delete');
     });
     Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 

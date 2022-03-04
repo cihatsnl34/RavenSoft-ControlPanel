@@ -34,6 +34,9 @@
                         <li><a href="{{route('company.company_packets_add')}}">Packages Add</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{route('company.activeService_show')}}" class="waves-effect"><i class="ti-home"></i><span>Active services</span></a>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>

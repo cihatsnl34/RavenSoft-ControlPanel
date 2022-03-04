@@ -40,10 +40,10 @@ class AuthenticatedSessionController extends Controller
         session(['country' => $user->country]);
         session(['status' => $user->status]);
         $request->session()->regenerate();
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => session('status')])) {
-            return redirect()->intended(RouteServiceProvider::COMPANY_HOME);
-        }
-        
+       // if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => session('status')])) {
+           
+        //}
+        return redirect()->intended(RouteServiceProvider::COMPANY_HOME);
     }
 
     /**
