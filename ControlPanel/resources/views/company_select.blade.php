@@ -70,6 +70,7 @@
                                                             
                                                             <option value=0>{{$rs->name}}</option>
                                                             @endforeach
+                                                            
                                                             <option value=1>Company I Want To Register</option>
                                                             <option value=2>Login is Partner</option>
                                                             <option value=3>Register is Partner</option>

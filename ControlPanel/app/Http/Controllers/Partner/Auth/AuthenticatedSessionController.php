@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $email = $request->input('email');
         $user = DB::select('select * from partners where email = ?', [$email])[0];
-        session(['name' =>$user->name]);
+        session(['username' =>$user->name]);
         session(['id' => $user->id]);
         $request->session()->regenerate();
 
