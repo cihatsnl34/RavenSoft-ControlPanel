@@ -31,14 +31,22 @@ class AuthenticatedSessionController extends Controller
     {
        
         
-        $request->authenticate();
+        
         $email = $request->input('email');
         $user = DB::select('select * from partners where email = ?', [$email])[0];
-        session(['username' =>$user->name]);
-        session(['id' => $user->id]);
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::PARTNER_HOME);
+        if ( $user->status==0) {
+            return view('PartnerloginFail');
+        }
+        else
+        {   
+            $request->authenticate();
+            $request->session()->regenerate();
+            session(['username' =>$user->name]);
+            session(['id' => $user->id]);
+            session(['country' => $user->country]);
+            session(['status' => $user->status]);
+          return redirect()->intended(RouteServiceProvider::PARTNER_HOME);
+        }
     }
 
     /**
