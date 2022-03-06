@@ -39,7 +39,15 @@
         @include('partner._footer')
 
     </div>
-    
+    <script type="text/javascript">
+        function txtreadonly()
+        {
+            var radio=document.getElementById("inlineRadio2");
+            var dvText= document.getElementById("myText");
+            dvText.style.display = radio.checked ? "none" : "block";
+           
+        }
+    </script>
     <script src="{{asset('assets')}}/js/jquery.min.js"></script>
     <script src="{{asset('assets')}}/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('assets')}}/js/modernizr.min.js"></script>

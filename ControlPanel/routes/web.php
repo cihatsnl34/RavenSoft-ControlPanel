@@ -54,10 +54,14 @@ Route::middleware('admin')->group(function () {
     Route::post('packets/update/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'update'])->name('admin_packets_update');
     Route::get('packets/delete/{id}',[\App\Http\Controllers\Admin\PacketsController::class, 'destroy'])->name('admin_packets_delete');
 
-    #Company
+    #Company Appeal
     Route::get('company',[\App\Http\Controllers\Admin\AppealController::class, 'index'])->name('admin_company_show'); 
     Route::get('company/approve/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'approve'])->name('admin_company_approve');
     Route::get('company/delete/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'destroy'])->name('admin_company_delete');
+    #Partner Appeal
+    Route::get('partner',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'index'])->name('admin_partner_show'); 
+    Route::get('partner/approve/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'approve'])->name('admin_partner_approve');
+    Route::get('partner/delete/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'destroy'])->name('admin_partner_delete');
 
 });
 Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
@@ -135,7 +139,7 @@ Route::namespace('Partner')->prefix('partner')->name('partner.')->group(function
     });
     Route::middleware('partner')->group(function () {
         Route::get('dashboard','HomeController@index')->name('dashboard');
-        Route::get('packetsBuy/{id}',[\App\Http\Controllers\Partner\HomeController::class, 'store'])->name('partner_package_buy');
+        Route::post('packetsBuy/{id}',[\App\Http\Controllers\Partner\HomeController::class, 'store'])->name('partner_package_buy');
         Route::get('Card',[\App\Http\Controllers\Partner\HomeController::class, 'card'])->name('partner_card');
         });  
           Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');

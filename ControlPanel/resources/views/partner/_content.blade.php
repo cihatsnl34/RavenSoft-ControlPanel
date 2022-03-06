@@ -12,45 +12,35 @@
         <p class="card-text">{{$rs->property}}</p><hr>
         <p class="card-text">{{$rs->packetDuration}} Month</p><hr>
         <p class="card-text">Price : {{$rs->price}}</p><hr>
+        <form action = '{{route('partner.partner_package_buy',['id' =>$rs->id])}}' method=POST>
+            @csrf
         <center>
         
             
             <div class="">
                 <p>Domain Select </p>
                 <div class="radio radio-info form-check-inline">
-                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" onClick="txtreadonly()" >
+                    <input type="radio" id="inlineRadio1" value="0" name="radioInline" checked="checked" onclick="txtreadonly()">
                     <label for="inlineRadio1"> I have domain </label>
                 </div>
                 <div class="radio form-check-inline">
-                    <input type="radio" id="inlineRadio2" value="option2" name="radioInline"checked="checked" onClick="txtreadonly()">
+                    <input type="radio" id="inlineRadio2" value="1" name="radioInline" onclick="txtreadonly()">
                     <label for="inlineRadio2"> I need domain </label>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row" id="myText">
                    
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" value="" id="text" name="text"required>
+                        <input type="text" class="form-control" value=""  name="text" required>
                     </div>
                 </div> 
             </div>
         
         </center>
-       <hr> <a href="{{route('partner.partner_package_buy',['id' =>$rs->id])}}" class="btn btn-primary waves-effect waves-light">BUY</a>
+       <hr><button type="submit" class="btn btn-primary waves-effect waves-light"> BUY</button>
+        </form>
     </div>
         
     </div>
-    <script type="text/javascript">
-        function txtreadonly(){
-            var radio=document.getElementById("inlineRadio2");
-            
-            if(document.getElementById("inlineRadio2").checked){
-                
-               var domain= document.getElementByName("text");
-               domain.setAttribute('readonly', true);
-            }
-            
-        }
-      
-
-    </script>
+   
 
 @endforeach</div>

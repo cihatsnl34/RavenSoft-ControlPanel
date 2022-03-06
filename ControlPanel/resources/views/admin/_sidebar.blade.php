@@ -32,9 +32,12 @@
                         <li><a href="{{route('admin.admin_packets_add')}}">Packages Add</a></li>
                     </ul>
                 </li>
-                <li >
-                    <a href="{{route('admin.admin_company_show')}}" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span></a>
-                    
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Appeal </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.admin_company_show')}}">Company Appeal</a></li>
+                        <li><a href="{{route('admin.admin_partner_show')}}">Partner Appeal</a></li>
+                    </ul>
                 </li>
                 <li >
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account"></i><span> Customer </span></a>
