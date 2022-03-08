@@ -40,7 +40,7 @@ class WelcomeController extends Controller
         }
         if($select==3)
         {
-            return redirect()->route('partner_register');
+            return redirect()->route('partner_registerList');
         }
         else
         {

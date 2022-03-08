@@ -18,7 +18,7 @@
 
 
     <body>
-
+ 
         <!-- Begin page -->
         <div class="accountbg"></div>
         <div class="wrapper-page">
@@ -54,11 +54,6 @@
                         </div>
                         <div class="form-group">
                             <div class="col-12">
-                                <input class="form-control" name="country" type="text" required="" placeholder="Country">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-12">
                                 <textarea name="adress" class="form-control" placeholder="Adress" rows="5" id=""required></textarea>
                             </div>
                         </div>
@@ -77,7 +72,14 @@
                                 <input class="form-control" name="postCode" type="text" required="" placeholder="Post Code">
                             </div>
                         </div>
-                        
+                        <div class="form-group">
+                            <select name="companySelect" class="form-control">
+                                @foreach($companyList as $rs)
+                                
+                                <option value={{$rs->id}}>{{$rs->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                         <div class="form-group text-center m-t-40">
                             <div class="col-12">

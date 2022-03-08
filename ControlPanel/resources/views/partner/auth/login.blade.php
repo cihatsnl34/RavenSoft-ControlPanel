@@ -30,7 +30,7 @@
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>Sign In</b></h4>
 
-                    <form class="form-horizontal m-t-20" action="{{ route('partner.partnerlogin') }}" method="post">
+                    <form class="form-horizontal m-t-20" action="{{route('partner.partnerlogin') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <div class="col-12">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group m-t-30 m-b-0">
                             <div class="col-sm-12 text-center">
-                                <a href="{{ route('partner_register') }}" class="text-muted">Register</a>
+                                <a href="{{ route('partner_registerList') }}" class="text-muted">Register</a>
                             </div>
                         </div>
                         

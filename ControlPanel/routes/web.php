@@ -147,6 +147,5 @@ Route::namespace('Partner')->prefix('partner')->name('partner.')->group(function
     });
 #Partner Register
 Route::post('partnerRegister',[\App\Http\Controllers\PartnerRegisterController::class, 'store'])->name('partner_register');
-Route::get('partnerRegister', function () {
-    return view('partnerRegister');
-});
+
+Route::get('partnerRegisterList',[\App\Http\Controllers\PartnerRegisterController::class, 'companyList'])->name('partner_registerList');
