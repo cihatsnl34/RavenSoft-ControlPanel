@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
     public function store(CompanyLoginRequest $request)
     {
        
-       
+        
         
         $email = $request->input('email');
         $password = $request->input('password');

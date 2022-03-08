@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         }
         else
         {   
-            $request->authenticate();
+            $request->authenticate(); 
             $request->session()->regenerate();
             session(['username' =>$user->name]);
             session(['id' => $user->id]);

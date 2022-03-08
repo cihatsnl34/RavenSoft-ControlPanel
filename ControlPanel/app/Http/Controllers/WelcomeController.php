@@ -19,7 +19,7 @@ class WelcomeController extends Controller
     public function create(){
         $companyList = Company::select('*')
                 ->where('status', '=', 1)
-                ->where('country', '=', session('country'))
+                ->where('country', '=', session('country')) 
                 ->get();
        // DB::table('companies')->where('status', '=', 1)->get();
         return view('company_select',['companyList'=>$companyList]);

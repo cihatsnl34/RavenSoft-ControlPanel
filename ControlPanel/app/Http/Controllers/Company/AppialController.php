@@ -17,7 +17,9 @@ class AppialController extends Controller
      */
     public function index()
     {
-        $partnerList = DB::table('partners')->where('status', '=', 0)->get();
+        $partnerList = DB::table('partners')->where('status', '=', 0)
+        ->where('companyId','=',session('id'))
+        ->get();
         #$companyList = DB::select('select * from companies where');
         return view('company.partner.partner_show',['partnerList'=>$partnerList]);
     }

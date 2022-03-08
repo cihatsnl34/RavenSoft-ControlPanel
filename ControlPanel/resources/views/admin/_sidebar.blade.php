@@ -37,6 +37,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.admin_company_show')}}">Company Appeal</a></li>
                         <li><a href="{{route('admin.admin_partner_show')}}">Partner Appeal</a></li>
+                        <li><a href="{{route('admin.admin_Apartner_show')}}">Alone Partner Appeal</a></li>
                     </ul>
                 </li>
                 <li >

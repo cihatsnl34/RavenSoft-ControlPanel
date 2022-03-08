@@ -62,6 +62,11 @@ Route::middleware('admin')->group(function () {
     Route::get('partner',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'index'])->name('admin_partner_show'); 
     Route::get('partner/approve/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'approve'])->name('admin_partner_approve');
     Route::get('partner/delete/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'destroy'])->name('admin_partner_delete');
+    #Alone Partner Appeal
+    Route::get('Alonepartner',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'index'])->name('admin_Apartner_show'); 
+    Route::get('Alonepartner/approve/{id}',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'approve'])->name('admin_Apartner_approve');
+    Route::get('Alonepartner/delete/{id}',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'destroy'])->name('admin_Apartner_delete');
+
 
 });
 Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');

@@ -78,6 +78,7 @@
                                 
                                 <option value={{$rs->id}}>{{$rs->name}}</option>
                                 @endforeach
+                                <option value=0>I want to Partner</option>
                             </select>
                         </div>
 
