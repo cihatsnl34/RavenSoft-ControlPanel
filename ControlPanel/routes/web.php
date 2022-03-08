@@ -58,15 +58,17 @@ Route::middleware('admin')->group(function () {
     Route::get('company',[\App\Http\Controllers\Admin\AppealController::class, 'index'])->name('admin_company_show'); 
     Route::get('company/approve/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'approve'])->name('admin_company_approve');
     Route::get('company/delete/{id}',[\App\Http\Controllers\Admin\AppealController::class, 'destroy'])->name('admin_company_delete');
+    Route::get('currentCompany',[\App\Http\Controllers\Admin\AppealController::class, 'currentCompany'])->name('admin_currentCompany_show');
     #Partner Appeal
     Route::get('partner',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'index'])->name('admin_partner_show'); 
     Route::get('partner/approve/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'approve'])->name('admin_partner_approve');
     Route::get('partner/delete/{id}',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'destroy'])->name('admin_partner_delete');
+    Route::get('currentPartner',[\App\Http\Controllers\Admin\PartnerAppealController::class, 'currentPartner'])->name('admin_currentPartner_show'); 
     #Alone Partner Appeal
     Route::get('Alonepartner',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'index'])->name('admin_Apartner_show'); 
     Route::get('Alonepartner/approve/{id}',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'approve'])->name('admin_Apartner_approve');
     Route::get('Alonepartner/delete/{id}',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'destroy'])->name('admin_Apartner_delete');
-
+    Route::get('currentalonepartner',[\App\Http\Controllers\Admin\AlonePartnerController::class, 'currentalonepartner'])->name('admin_currentaloneApartner_show');    
 
 });
 Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
@@ -116,7 +118,8 @@ Route::namespace('Company')->prefix('company')->name('company.')->group(function
     Route::get('packets/delete/{id}',[\App\Http\Controllers\Company\PackageController::class, 'destroy'])->name('company_packets_delete');
 
     #partner
-    Route::get('partner',[\App\Http\Controllers\Company\AppialController::class, 'index'])->name('company_partner_show'); 
+    Route::get('partner',[\App\Http\Controllers\Company\AppialController::class, 'index'])->name('company_partner_show');
+    Route::get('currentPartner',[\App\Http\Controllers\Company\AppialController::class, 'currentPartner'])->name('company_currentPartner_show');  
     Route::get('partner/approve/{id}',[\App\Http\Controllers\Company\AppialController::class, 'approve'])->name('company_partner_approve');
     Route::get('partner/delete/{id}',[\App\Http\Controllers\Company\AppialController::class, 'destroy'])->name('company_partner_delete');
     #Active Service

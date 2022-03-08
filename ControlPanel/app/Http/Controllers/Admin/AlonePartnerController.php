@@ -22,6 +22,11 @@ class AlonePartnerController extends Controller
         #$companyList = DB::select('select * from companies where');
         return view('admin.partner.Apartner_show',['partnerList'=>$partnerList]);
     }
+    public function currentalonepartner(){
+        $partnerList = DB::table('partners')->where('status', '=', 1)
+        ->where('companyId','=',0)->get();
+        return view('admin.partner.currentaloneApartner_show',['partnerList'=>$partnerList]);
+    }
     public function approve(Partner $partner, $id)
     {
         $PartnerData = Partner::find($id);

@@ -20,6 +20,10 @@ class PartnerAppealController extends Controller
         #$companyList = DB::select('select * from companies where');
         return view('admin.partner.partner_show',['partnerList'=>$partnerList]);
     }
+    public function currentPartner(){
+        $partnerList = DB::table('partners')->where('status', '=', 1)->get();
+        return view('admin.partner.currentPartner_show',['partnerList'=>$partnerList]);
+    }
     public function approve(Partner $partner, $id)
     {
         $PartnerData = Partner::find($id);

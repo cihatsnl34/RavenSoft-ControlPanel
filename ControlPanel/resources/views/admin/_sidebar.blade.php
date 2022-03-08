@@ -40,14 +40,14 @@
                         <li><a href="{{route('admin.admin_Apartner_show')}}">Alone Partner Appeal</a></li>
                     </ul>
                 </li>
-                <li >
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account"></i><span> Customer </span></a>
-                    
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Costumer </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.admin_currentCompany_show')}}">Company</a></li>
+                        <li><a href="{{route('admin.admin_currentPartner_show')}}">Partner</a></li>
+                        <li><a href="{{route('admin.admin_currentaloneApartner_show')}}">Alone Partner</a></li>
+                    </ul>
                 </li>
-                
-
-                
-               
             </ul>
         </div>
         <div class="clearfix"></div>

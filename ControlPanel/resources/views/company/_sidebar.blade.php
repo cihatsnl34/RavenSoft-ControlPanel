@@ -27,6 +27,9 @@
                 <li>
                     <a href="{{route('company.companylogin')}}" class="waves-effect"><i class="ti-home"></i><span>Home</span></a>
                 </li>
+                <li>
+                    <a href="{{route('company.company_currentPartner_show')}}" class="waves-effect"><i class="ti-home"></i><span>Current Partner</span></a>
+                </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Packages </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">

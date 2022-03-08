@@ -20,6 +20,10 @@ class AppealController extends Controller
         #$companyList = DB::select('select * from companies where');
         return view('admin.company.company_show',['companyList'=>$companyList]);
     }
+    public function currentCompany(){
+        $companyList = DB::table('companies')->where('status', '=', 1)->get();
+        return view('admin.company.currentCompany_show',['companyList'=>$companyList]);
+    }
     public function approve(Company $company, $id)
     {
         $CompanyData = Company::find($id);

@@ -23,6 +23,12 @@ class AppialController extends Controller
         #$companyList = DB::select('select * from companies where');
         return view('company.partner.partner_show',['partnerList'=>$partnerList]);
     }
+    public function currentPartner(){
+        $partnerList = DB::table('partners')->where('status', '=', 1)
+        ->where('companyId','=',session('id'))
+        ->get();
+        return view('company.partner.currentPartner_show',['partnerList'=>$partnerList]);
+    }
     public function approve(Partner $partner, $id)
     {
         $PartnerData = Partner::find($id);
