@@ -37,4 +37,9 @@ class PartnerAppealController extends Controller
         DB::table('partners')->where('id', '=', $id)->delete();
         return redirect()->route('admin.admin_partner_show');
     }
+    public function deletePartner(Partner $partner,$id)
+    {
+        DB::table('partners')->where('id', '=', $id)->delete();
+        return redirect()->route('admin.admin_currentPartner_show');
+    }
 }

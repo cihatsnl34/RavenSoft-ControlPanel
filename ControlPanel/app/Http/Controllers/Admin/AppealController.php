@@ -24,6 +24,11 @@ class AppealController extends Controller
         $companyList = DB::table('companies')->where('status', '=', 1)->get();
         return view('admin.company.currentCompany_show',['companyList'=>$companyList]);
     }
+    public function deleteCompany(Company $company, $id)
+    {
+        DB::table('companies')->where('id', '=', $id)->delete();
+        return redirect()->route('admin.admin_currentCompany_show');
+    }
     public function approve(Company $company, $id)
     {
         $CompanyData = Company::find($id);
@@ -37,6 +42,7 @@ class AppealController extends Controller
         DB::table('companies')->where('id', '=', $id)->delete();
         return redirect()->route('admin.admin_company_show');
     }
+    
     /**
      * Show the form for creating a new resource.
      *

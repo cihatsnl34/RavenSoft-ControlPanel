@@ -42,6 +42,11 @@ class AppialController extends Controller
         DB::table('partners')->where('id', '=', $id)->delete();
         return redirect()->route('company.company_partner_show');
     }
+    public function delete(Partner $partner, $id)
+    {
+        DB::table('partners')->where('id', '=', $id)->delete();
+        return redirect()->route('company.company_currentPartner_show');
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -40,4 +40,9 @@ class AlonePartnerController extends Controller
         DB::table('partners')->where('id', '=', $id)->delete();
         return redirect()->route('admin.admin_Apartner_show');
     }
+    public function deleteAlone(Partner $partner,$id)
+    {
+        DB::table('partners')->where('id', '=', $id)->delete();
+        return redirect()->route('admin.admin_currentaloneApartner_show');
+    }
 }
