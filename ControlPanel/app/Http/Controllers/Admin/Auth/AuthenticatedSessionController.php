@@ -30,7 +30,6 @@ class AuthenticatedSessionController extends Controller
     public function store(AdminLoginRequest $request)
     {
        
-        
         $request->authenticate();
         $email = $request->input('email');
         $user = DB::select('select * from admins where email = ?', [$email])[0];

@@ -24,7 +24,7 @@ Route::post('company_select',[\App\Http\Controllers\WelcomeController::class, 's
 Route::get('company_select',[\App\Http\Controllers\WelcomeController::class, 'create'])->name('company_select');
 
 
-
+ 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

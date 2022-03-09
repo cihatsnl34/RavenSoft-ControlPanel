@@ -17,19 +17,22 @@
     </head>
 
 
-    <body>
+    <body> 
 
         <!-- Begin page -->
         <div class="accountbg"></div>
         <div class="wrapper-page">
             <div class="card card-pages">
-
                 <div class="card-body">
-                    <div class="text-center m-t-0 m-b-15">
+                   <div class="text-center m-t-0 m-b-15">
                             <a href="index.html" class="logo logo-admin"><img src="{{asset('assets')}}/images/dgmoss.png" alt="" height="34"></a>
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>Sign In</b></h4>
+                    <!-- Session Status -->
+                    <x-auth-session-status class="mb-4" :status="session('status')" />
 
+                    <!-- Validation Errors -->
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <form class="form-horizontal m-t-20" action="{{ route('admin.adminlogin') }}" method="post">
                         @csrf
                         <div class="form-group">
@@ -43,24 +46,16 @@
                                 <input class="form-control" type="password" placeholder="Password" required autocomplete="current-password" name="password" id="password">
                             </div>
                         </div>
-
-                        
-
                         <div class="form-group text-center m-t-40">
                             <div class="col-12">
                                 <button class="btn btn-primary btn-block btn-lg waves-effect waves-light" type="submit">Log In</button>
                             </div>
                         </div>
-
-                        
                     </form>
                 </div>
 
             </div>
         </div>
-
-
-
         <!-- jQuery  -->
         <script src="{{asset('assets')}}/js/jquery.min.js"></script>
         <script src="{{asset('assets')}}/js/bootstrap.bundle.min.js"></script>
