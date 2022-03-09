@@ -59,5 +59,11 @@ class HomeController extends Controller
    {
     return view('partner.card');
    }
+   public function myPackages()
+   {
+       $packagesBuyList = DB::table('package_buys')->where('partnerId','=',session('id'))->get();
+       #$companyList = DB::select('select * from companies where');
+       return view('partner.myPackages.myPackages_show',['packagesBuyList'=>$packagesBuyList]);
+   }
 }
  

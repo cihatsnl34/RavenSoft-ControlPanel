@@ -153,6 +153,7 @@ Route::namespace('Partner')->prefix('partner')->name('partner.')->group(function
         Route::get('dashboard','HomeController@index')->name('dashboard');
         Route::post('packetsBuy/{id}',[\App\Http\Controllers\Partner\HomeController::class, 'store'])->name('partner_package_buy');
         Route::get('Card',[\App\Http\Controllers\Partner\HomeController::class, 'card'])->name('partner_card');
+        Route::get('myPackages',[\App\Http\Controllers\Partner\HomeController::class, 'myPackages'])->name('myPackages');
         });  
           Route::get('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 

@@ -27,11 +27,9 @@
                 <li>
                     <a href="{{route('partner.partnerlogin')}}" class="waves-effect"><i class="ti-home"></i><span> Home</span></a>
                 </li>
-
-                
-               
-                
-               
+                <li>
+                    <a href="{{route('partner.myPackages')}}" class="waves-effect"><i class="ti-home"></i><span>My Packages</span></a>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>
