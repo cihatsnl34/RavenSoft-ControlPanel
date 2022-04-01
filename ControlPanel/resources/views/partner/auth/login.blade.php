@@ -29,8 +29,6 @@
                             <a href="index.html" class="logo logo-admin"><img src="{{asset('assets')}}/images/dgmoss.png" alt="" height="34"></a>
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>Sign In</b></h4>
-                    <!-- Session Status -->
-                    <x-auth-session-status class="mb-4" :status="session('status')" />
 
                      <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />

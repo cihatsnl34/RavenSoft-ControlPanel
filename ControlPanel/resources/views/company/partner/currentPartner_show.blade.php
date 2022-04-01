@@ -5,7 +5,7 @@
 
         <div class="">
             <div class="page-header-title">
-                <h4 class="page-title">Partner List</h4>
+                <h4 class="page-title">Current Partner List</h4>
             </div>
         </div>
 

@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(CompanyLoginRequest $request)
     {
-        $request->authenticate();
+        
         $email = $request->input('email');
         $password = $request->input('password');
         $user = DB::select('select * from companies where email = ?', [$email])[0];
@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
         }
         else
         {   
-            
+            $request->authenticate();
             $request->session()->regenerate();
             session(['username' =>$user->name]);
             session(['id' => $user->id]);

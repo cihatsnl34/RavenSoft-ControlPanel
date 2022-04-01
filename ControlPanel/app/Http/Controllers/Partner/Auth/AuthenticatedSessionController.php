@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
     {
        
         
-        $request->authenticate();
+        
         $email = $request->input('email');
         $user = DB::select('select * from partners where email = ?', [$email])[0];
         if ( $user->status==0) {
@@ -39,6 +39,7 @@ class AuthenticatedSessionController extends Controller
         }
         else
         {   
+            $request->authenticate();
             $request->session()->regenerate();
             session(['username' =>$user->name]);
             session(['id' => $user->id]);
